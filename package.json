@@ -1,0 +1,17 @@
+{
+  "name": "nodekb",
+  "version": "1.0.0",
+  "description": "A simple CRUD app with Nodejs and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Sergio Díez de Pedro",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4",
+    "pug": "^2.0.0-rc.2"
+  }
+}

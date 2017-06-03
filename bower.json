@@ -1,0 +1,13 @@
+{
+  "name": "nodekb",
+  "description": "A simple CRUD app with Nodejs and MongoDB",
+  "main": "app.js",
+  "authors": [
+    "Sergio Díez de Pedro"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
