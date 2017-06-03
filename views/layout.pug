@@ -23,6 +23,10 @@ html(lang="en")
               li
                 a(href='/articles/add') Add Article
       .container
+            !=messages('message', locals)
+            if errors 
+              each error, i in errors
+                div(class="alert alert-danger") #{error.msg}
             block content
             hr
             footer
