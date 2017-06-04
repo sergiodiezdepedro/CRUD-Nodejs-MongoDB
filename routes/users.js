@@ -21,12 +21,12 @@ router.post('/register', function(req, res) {
     const password = req.body.password;
     const password2 = req.body.password2;
 
-    req.checkBody('name', 'Name is required').notEmpty();
-    req.checkBody('email', 'E-mail is required').notEmpty();
-    req.checkBody('email', 'E-mail is not valid').isEmail();
-    req.checkBody('username', 'User name is required').notEmpty();
-    req.checkBody('password', 'Password is required').notEmpty();
-    req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
+    req.checkBody('name', 'El nombre es obligatorio').notEmpty();
+    req.checkBody('email', 'El E-mail es obligatorio').notEmpty();
+    req.checkBody('email', 'El E-mail no es válido').isEmail();
+    req.checkBody('username', 'El nombre de usuario es obligatorio').notEmpty();
+    req.checkBody('password', 'La contraseña es obligatoria').notEmpty();
+    req.checkBody('password2', 'Las contraseñas no coinciden').equals(req.body.password);
 
     let errors = req.validationErrors();
 
@@ -52,7 +52,7 @@ router.post('/register', function(req, res) {
                    if(err) {
                        console.log(err);
                    } else {
-                       req.flash('success', 'You are now registered and can log in');
+                       req.flash('success', 'Ya estás registrado y ahora puedes acceder');
                        res.redirect('/users/login');
                    }
                });
@@ -78,7 +78,7 @@ router.post('/login', function (req, res, next) {
 // Logout
 router.get('/logout', function (req, res) {
     req.logout();
-    req.flash('success', 'You are logged out');
+    req.flash('success', 'Estás desconectado');
     res.redirect('/users/login');
 });
 

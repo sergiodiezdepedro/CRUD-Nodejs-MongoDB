@@ -10,22 +10,22 @@ let User = require('../models/user');
 // 'Add Article' Route
 router.get('/add', ensureAuthenticated, function (req, res) {
     res.render('add-article', {
-        title: 'Add Article'
+        title: 'Añadir Artículo'
     });
 });
 
 // 'Add Submit POST' Route
 router.post('/add', function (req, res) {
-    req.checkBody('title', 'Title is required').notEmpty();
+    req.checkBody('title', 'El título es obligatorio').notEmpty();
     // req.checkBody('author', 'Author is required').notEmpty();
-    req.checkBody('body', 'Content is required').notEmpty();
+    req.checkBody('body', 'El contenido es obligatorio').notEmpty();
 
     // Get Errors
     let errors = req.validationErrors();
 
     if (errors) {
         res.render('add-article', {
-            title: 'Add Article',
+            title: 'Añadir Artículo',
             errors: errors
         });
     } else {
@@ -40,7 +40,7 @@ router.post('/add', function (req, res) {
                 console.log(err);
                 return;
             } else {
-                req.flash('success', 'Artícle Added');
+                req.flash('success', 'Artículo Añadido');
                 res.redirect('/');
             }
         });
@@ -51,11 +51,11 @@ router.post('/add', function (req, res) {
 router.get('/edit/:id', ensureAuthenticated, function (req, res) {
     Article.findById(req.params.id, function (err, article) {
         if (article.author != req.user._id) {
-            req.flash('danger', 'Not Authorized');
+            req.flash('danger', 'No Autorizado');
             res.redirect('/');
         }
         res.render('edit-article', {
-            title: 'Edit Article',
+            title: 'Editar Artículo',
             article: article
         });
     });
@@ -65,7 +65,7 @@ router.get('/edit/:id', ensureAuthenticated, function (req, res) {
 router.post('/edit/:id', function (req, res) {
     let article = {};
     article.title = req.body.title;
-    article.author = req.body.author;
+    article.author = req.user._id;
     article.body = req.body.body;
 
     let query = {
@@ -77,7 +77,7 @@ router.post('/edit/:id', function (req, res) {
             console.log(err);
             return;
         } else {
-            req.flash('success', 'Article Updated');
+            req.flash('success', 'Artículo Actualizado');
             res.redirect('/');
         }
     });
@@ -126,7 +126,7 @@ function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated) {
         return next();
     } else {
-        req.flash('danger', 'Please Login');
+        req.flash('danger', 'Identifícate como Usuario, por favor');
         res.redirect('/users/login');
     }
 }

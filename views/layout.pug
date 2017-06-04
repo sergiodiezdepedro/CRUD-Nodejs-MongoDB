@@ -22,16 +22,16 @@ html(lang="en")
                 a(href='/') Home
               if user
                 li
-                  a(href='/articles/add') Add Article
+                  a(href='/articles/add') Añadir Artículo
             ul.nav.navbar-nav.navbar-right
               if user
                 li 
                   a(href='/users/logout') Logout
               else
                 li
-                  a(href='/users/register') Register
+                  a(href='/users/register') Registro
                 li
-                  a(href='/users/login') Login
+                  a(href='/users/login') Acceso
       .container
             !=messages('message', locals)
             if errors 

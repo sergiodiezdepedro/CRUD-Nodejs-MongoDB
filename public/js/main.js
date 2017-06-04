@@ -8,7 +8,7 @@ $(document).ready(function () {
             type: 'DELETE',
             url: '/articles/'+id,
             success: function (response) {
-                alert('Deleting Article');
+                alert('Borrando Artículo');
                 window.location.href = '/';
             },
             error: function (err) {

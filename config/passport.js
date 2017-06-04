@@ -16,7 +16,7 @@ module.exports = function (passport) {
             if (err) throw err;
             if (!user) {
                 return done(null, false, {
-                    message: 'No user found'
+                    message: 'No encontrado usuario'
                 });
             }
             //Match Password
@@ -26,7 +26,7 @@ module.exports = function (passport) {
                     return done(null, user);
                 } else {
                     return done(null, false, {
-                        message: 'Wrong Password'
+                        message: 'Contraseña Incorrecta'
                     });
                 }
             });

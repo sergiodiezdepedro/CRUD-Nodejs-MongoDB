@@ -15,7 +15,7 @@ let db = mongoose.connection;
 
 // Check connection
 db.once('open', function () {
-    console.log('Connected to MongoDB');
+    console.log('Conexión con MongoDB');
 });
 
 // Check for DB errors
@@ -96,7 +96,7 @@ app.get('/', function (req, res) {
             console.log(err);
         } else {
             res.render('index', {
-                title: 'Articles',
+                title: 'Artículos',
                 articles: articles
             });
         }
@@ -111,5 +111,5 @@ app.use('/users', users);
 
 // Start Server
 app.listen(3000, function () {
-    console.log('Server started on port 3000...');
+    console.log('Servidor funcionando en el puerto 3000...');
 });
