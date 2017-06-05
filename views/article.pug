@@ -1,8 +1,9 @@
 extends layout
 
 block content
-    h1= article.title
-    h4 Por #{author}
+    h1.cabecera-pagina= article.title
+    h4 Por 
+        span.autor #{author}
     p= article.body
     hr
     if user

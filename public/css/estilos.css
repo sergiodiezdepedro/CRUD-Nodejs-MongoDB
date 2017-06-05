@@ -1,0 +1,60 @@
+body {
+  font-size: 16px;
+  font-family: Ubuntu, Helvetica, Arial, sans-serif; }
+
+a,
+a:hover {
+  color: #e80c90; }
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    border-radius: 0; } }
+
+.navbar-inverse {
+  background-color: #212529; }
+  .navbar-inverse .navbar-brand {
+    color: #e80c90; }
+    .navbar-inverse .navbar-brand:hover {
+      color: #fcc4e6; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #e80c90; }
+  .navbar-inverse .navbar-nav > li > a:hover {
+    color: #fcc4e6; }
+
+.cabecera-pagina {
+  margin-bottom: 3rem;
+  color: #e8590c; }
+
+.autor {
+  margin-left: .3rem;
+  font-size: 2.5rem;
+  color: #7e8b98; }
+
+.footer {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #212529; }
+  .footer__texto {
+    color: #f1f3f5;
+    margin-bottom: 0; }
+
+textarea {
+  resize: none; }
+
+.alert-error {
+  background-color: #f2dede;
+  color: #a94442;
+  border-color: #ebccd1; }
+
+.alert-success_msg {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-color: #d6e9c6; }
+
+.btn-warning, .delete-article {
+  margin-top: 3rem;
+  margin-right: 2rem; }
+
+/*# sourceMappingURL=estilos.css.map */

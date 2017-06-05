@@ -14,7 +14,7 @@ router.get('/register', function (req, res) {
 });
 
 // Register Process
-router.post('/register', function(req, res) {
+router.post('/register', function (req, res) {
     const name = req.body.name;
     const email = req.body.email;
     const username = req.body.username;
@@ -30,34 +30,34 @@ router.post('/register', function(req, res) {
 
     let errors = req.validationErrors();
 
-    if(errors) {
+    if (errors) {
         res.render('register', {
-            errors:errors
+            errors: errors
         });
     } else {
         let newUser = new User({
-            name:name,
-            email:email,
-            username:username,
-            password:password
+            name: name,
+            email: email,
+            username: username,
+            password: password
         });
 
-       bcrypt.genSalt(10, function(err, salt) {
-           bcrypt.hash(newUser.password, salt, function(er, hash){
-               if(err) {
-                   console.log(err);
-               }
-               newUser.password = hash;
-               newUser.save(function(err) {
-                   if(err) {
-                       console.log(err);
-                   } else {
-                       req.flash('success', 'Ya estás registrado y ahora puedes acceder');
-                       res.redirect('/users/login');
-                   }
-               });
-           });
-       });
+        bcrypt.genSalt(10, function (err, salt) {
+            bcrypt.hash(newUser.password, salt, function (er, hash) {
+                if (err) {
+                    console.log(err);
+                }
+                newUser.password = hash;
+                newUser.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        req.flash('success', 'Ya estás registrado y ahora puedes acceder');
+                        res.redirect('/users/login');
+                    }
+                });
+            });
+        });
     }
 });
 

@@ -1,11 +1,84 @@
+$font-size: 16px;
+$fuente-sans-serif: Ubuntu,
+Helvetica,
+Arial,
+sans-serif;
+$color-light: #f1f3f5;
+$color-dark: #212529;
+$color-destacado: #e8590c;
+$color-links: #e80c90;
+body {
+    font-size: $font-size;
+    font-family: $fuente-sans-serif;
+}
+
+a,
+a:hover {
+    color: $color-links;
+}
+
+.navbar {
+    @media screen and (min-width: 768px) {
+        border-radius: 0;
+    }
+}
+
+.navbar-inverse {
+    background-color: $color-dark;
+    .navbar-brand {
+        color: $color-links;
+        &:hover {
+            color: lighten($color-links, 40%);
+        }
+    }
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: $color-links;
+    &:hover {
+        color: lighten($color-links, 40%);
+    }
+}
+
+.cabecera-pagina {
+    margin-bottom: 3rem;
+    color: $color-destacado;
+}
+
+.autor {
+    margin-left: .3rem;
+    font-size: 2.5rem;
+    color: lighten($color-dark, 40%);
+}
+
+.footer {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    text-align: center;
+    background-color: $color-dark;
+    &__texto {
+        color: $color-light;
+        margin-bottom: 0;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
 .alert-error {
     background-color: #f2dede;
     color: #a94442;
     border-color: #ebccd1;
 }
 
-.alert-success_msg{
+.alert-success_msg {
     background-color: #dff0d8;
     color: #3c763d;
     border-color: #d6e9c6;
+}
+
+.btn-warning, .delete-article {
+    margin-top: 3rem;
+    margin-right: 2rem;
 }

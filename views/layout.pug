@@ -11,7 +11,7 @@ html(lang="en")
         .container
           .navbar-header
             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-              span.sr-only Toggle navigation
+              span.sr-only Activar/Desactivar Navegación
               span.icon-bar
               span.icon-bar
               span.icon-bar
@@ -39,8 +39,8 @@ html(lang="en")
                 div(class="alert alert-danger") #{error.msg}
             block content
             hr
-            footer
-                p Sergio Díez de Pedro, 2017
+      footer.footer
+        p.footer__texto Sergio Díez de Pedro, 2017
       script(src='/bower_components/jquery/dist/jquery.min.js')
       script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
       script(src='/js/main.js')
